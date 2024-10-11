@@ -1,0 +1,11 @@
+/Users/veerpratap/Desktop/yral/fuel-dao-leptos-csr/target/front/debug/deps/libbeef-a6ccc206be44b942.rmeta: /Users/veerpratap/.cargo/registry/src/index.crates.io-6f17d22bba15001f/beef-0.5.2/src/lib.rs /Users/veerpratap/.cargo/registry/src/index.crates.io-6f17d22bba15001f/beef-0.5.2/src/traits.rs /Users/veerpratap/.cargo/registry/src/index.crates.io-6f17d22bba15001f/beef-0.5.2/src/wide.rs /Users/veerpratap/.cargo/registry/src/index.crates.io-6f17d22bba15001f/beef-0.5.2/src/generic.rs /Users/veerpratap/.cargo/registry/src/index.crates.io-6f17d22bba15001f/beef-0.5.2/src/lean.rs
+
+/Users/veerpratap/Desktop/yral/fuel-dao-leptos-csr/target/front/debug/deps/libbeef-a6ccc206be44b942.rlib: /Users/veerpratap/.cargo/registry/src/index.crates.io-6f17d22bba15001f/beef-0.5.2/src/lib.rs /Users/veerpratap/.cargo/registry/src/index.crates.io-6f17d22bba15001f/beef-0.5.2/src/traits.rs /Users/veerpratap/.cargo/registry/src/index.crates.io-6f17d22bba15001f/beef-0.5.2/src/wide.rs /Users/veerpratap/.cargo/registry/src/index.crates.io-6f17d22bba15001f/beef-0.5.2/src/generic.rs /Users/veerpratap/.cargo/registry/src/index.crates.io-6f17d22bba15001f/beef-0.5.2/src/lean.rs
+
+/Users/veerpratap/Desktop/yral/fuel-dao-leptos-csr/target/front/debug/deps/beef-a6ccc206be44b942.d: /Users/veerpratap/.cargo/registry/src/index.crates.io-6f17d22bba15001f/beef-0.5.2/src/lib.rs /Users/veerpratap/.cargo/registry/src/index.crates.io-6f17d22bba15001f/beef-0.5.2/src/traits.rs /Users/veerpratap/.cargo/registry/src/index.crates.io-6f17d22bba15001f/beef-0.5.2/src/wide.rs /Users/veerpratap/.cargo/registry/src/index.crates.io-6f17d22bba15001f/beef-0.5.2/src/generic.rs /Users/veerpratap/.cargo/registry/src/index.crates.io-6f17d22bba15001f/beef-0.5.2/src/lean.rs
+
+/Users/veerpratap/.cargo/registry/src/index.crates.io-6f17d22bba15001f/beef-0.5.2/src/lib.rs:
+/Users/veerpratap/.cargo/registry/src/index.crates.io-6f17d22bba15001f/beef-0.5.2/src/traits.rs:
+/Users/veerpratap/.cargo/registry/src/index.crates.io-6f17d22bba15001f/beef-0.5.2/src/wide.rs:
+/Users/veerpratap/.cargo/registry/src/index.crates.io-6f17d22bba15001f/beef-0.5.2/src/generic.rs:
+/Users/veerpratap/.cargo/registry/src/index.crates.io-6f17d22bba15001f/beef-0.5.2/src/lean.rs:

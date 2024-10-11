@@ -1,0 +1,10 @@
+/Users/veerpratap/Desktop/yral/fuel-dao-leptos-csr/target/debug/deps/libserde_qs-f8cbf562a6d2f6f5.rmeta: /Users/veerpratap/.cargo/registry/src/index.crates.io-6f17d22bba15001f/serde_qs-0.13.0/src/lib.rs /Users/veerpratap/.cargo/registry/src/index.crates.io-6f17d22bba15001f/serde_qs-0.13.0/src/de/mod.rs /Users/veerpratap/.cargo/registry/src/index.crates.io-6f17d22bba15001f/serde_qs-0.13.0/src/de/parse.rs /Users/veerpratap/.cargo/registry/src/index.crates.io-6f17d22bba15001f/serde_qs-0.13.0/src/error.rs /Users/veerpratap/.cargo/registry/src/index.crates.io-6f17d22bba15001f/serde_qs-0.13.0/src/ser.rs /Users/veerpratap/.cargo/registry/src/index.crates.io-6f17d22bba15001f/serde_qs-0.13.0/src/utils.rs
+
+/Users/veerpratap/Desktop/yral/fuel-dao-leptos-csr/target/debug/deps/serde_qs-f8cbf562a6d2f6f5.d: /Users/veerpratap/.cargo/registry/src/index.crates.io-6f17d22bba15001f/serde_qs-0.13.0/src/lib.rs /Users/veerpratap/.cargo/registry/src/index.crates.io-6f17d22bba15001f/serde_qs-0.13.0/src/de/mod.rs /Users/veerpratap/.cargo/registry/src/index.crates.io-6f17d22bba15001f/serde_qs-0.13.0/src/de/parse.rs /Users/veerpratap/.cargo/registry/src/index.crates.io-6f17d22bba15001f/serde_qs-0.13.0/src/error.rs /Users/veerpratap/.cargo/registry/src/index.crates.io-6f17d22bba15001f/serde_qs-0.13.0/src/ser.rs /Users/veerpratap/.cargo/registry/src/index.crates.io-6f17d22bba15001f/serde_qs-0.13.0/src/utils.rs
+
+/Users/veerpratap/.cargo/registry/src/index.crates.io-6f17d22bba15001f/serde_qs-0.13.0/src/lib.rs:
+/Users/veerpratap/.cargo/registry/src/index.crates.io-6f17d22bba15001f/serde_qs-0.13.0/src/de/mod.rs:
+/Users/veerpratap/.cargo/registry/src/index.crates.io-6f17d22bba15001f/serde_qs-0.13.0/src/de/parse.rs:
+/Users/veerpratap/.cargo/registry/src/index.crates.io-6f17d22bba15001f/serde_qs-0.13.0/src/error.rs:
+/Users/veerpratap/.cargo/registry/src/index.crates.io-6f17d22bba15001f/serde_qs-0.13.0/src/ser.rs:
+/Users/veerpratap/.cargo/registry/src/index.crates.io-6f17d22bba15001f/serde_qs-0.13.0/src/utils.rs:
