@@ -1,1 +1,0 @@
-{"rustc":18039196197934730424,"features":"","declared_features":"","target":0,"profile":0,"path":0,"deps":[[1610464546304212625,"build_script_build",false,1799698357474764483]],"local":[{"RerunIfChanged":{"output":"wasm32-unknown-unknown/debug/build/fuel_dao_leptos_csr-c2c6775c1e9a7b62/output","paths":["./did/*"]}}],"rustflags":[],"metadata":0,"config":0,"compile_kind":0}
