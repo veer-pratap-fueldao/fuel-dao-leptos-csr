@@ -1,8 +1,8 @@
-use fuel_dao_leptos_csr::app::App;
-use leptos::{get_configuration, logging::log};
-use leptos_router::Router;
-
+#[cfg(feature = "csr")]
 pub fn main() {
+    use fuel_dao_leptos_csr::app::App;
+    use leptos::{get_configuration, logging::log};
+    use leptos_router::Router;
     // Initialize logging (useful for client-side debugging)
     simple_logger::init_with_level(log::Level::Debug).expect("couldn't initialize logging");
 
