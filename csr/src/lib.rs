@@ -1,5 +1,6 @@
 pub mod app;
-// pub mod auth;
+
+#[cfg(feature = "ssr")]
 pub mod auth;
 pub mod canister;
 pub mod components;
