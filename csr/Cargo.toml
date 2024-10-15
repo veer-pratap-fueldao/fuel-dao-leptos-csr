@@ -4,17 +4,72 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
-console_error_panic_hook = "0.1.7"
-convert_case = "0.6.0"
-dotenv = "0.15.0"
-ic-agent = { version = "0.38.2", features = ["wasm-bindgen"] }
-leptos = { version = "0.6.15", features = ["csr"] }
-leptos_router = { version = "0.6.15", features = ["csr"] }
-simple_logger = "5.0.0"
+axum = { version = "0.7", optional = true, features = ["macros"] }
+console_error_panic_hook = "0.1"
+leptos = { version = "0.6.15", default-features = false, features = ["csr"] }
+
+leptos_axum = { version = "0.6" }
+leptos_meta = { version = "0.6", features = ["nightly"] }
+leptos_router = { version = "0.6", features = ["nightly"] }
+# tokio = { version = "1", optional = true, features = [
+#     "rt-multi-thread",
+#     "signal",
+#     "time",
+# ] }
+tower = { version = "0.4", optional = true, features = ["full"] }
+tower-http = { version = "0.5", features = ["fs"], optional = true }
+wasm-bindgen = "=0.2.93"
+thiserror = "1"
+tracing = { version = "0.1", optional = true }
+http = "1"
+leptos_icons = "0.3.1"
+icondata_core = "0.1.0"
+icondata = "0.4.0"
+#speedate = "0.14.4"
 serde.workspace = true
+candid.workspace = true
+ic-agent = { version = "0.38.1", features = ["wasm-bindgen"]}
+ic-base-types = { git = "https://github.com/dfinity/ic", rev = "tags/release-2024-05-29_23-02-base" }
+icp-ledger = { git = "https://github.com/dfinity/ic", rev = "tags/release-2024-05-29_23-02-base" }
 serde-wasm-bindgen = "0.6.5"
-serde_json = "1.0.110"
+futures = "0.3.30"
+leptos-use = "0.12.0"
 codee = { version = "0.1.2", features = ["json_serde"] }
+#reqwest = { version = "0.12", default-features = false, features = [
+#    "json",
+#    "http2",
+#] }
+k256 = { version = "0.13.4", default-features = false, features = [
+    "std",
+    "jwk",
+] }
+web-time.workspace = true
+uts2ts = "0.4.1"
+dotenv = { version = "0.15.0", optional = true }
+axum-extra = { version = "0.9.3", optional = true, features = [
+    "cookie",
+    "cookie-signed",
+    "cookie-private",
+] }
+rand_chacha = { version = "0.3.1"}
+serde_json = "1.0.110"
+enum_dispatch = { version = "0.3.12", optional = true }
+redis = { version = "0.25.2", features = [
+    "tokio-rustls-comp",
+    "aio",
+    "ahash",
+    "connection-manager",
+    "keep-alive",
+], default-features = false, optional = true }
+redb = { version = "2.0.0", optional = true }
+gloo = { version = "0.11.0", features = ["futures", "net", "net"] }
+bb8 = { version = "0.8.3", optional = true }
+bb8-redis = { version = "0.15.0", optional = true }
+log = "0.4.22"
+simple_logger = "5.0.0"
+hex = "0.4.3"
+convert_case = "0.6.0"
+chrono = "0.4.38"
 
 
 [build-dependencies]

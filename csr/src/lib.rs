@@ -1,5 +1,6 @@
 pub mod app;
 // pub mod auth;
+pub mod auth;
 pub mod canister;
 pub mod components;
 pub mod consts;

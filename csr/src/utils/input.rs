@@ -21,9 +21,10 @@ macro_rules! input_component {
             let show_error = create_rw_signal(false);
             let input_ref = create_node_ref::<html::$input_type>();
             let on_input = move || {
-                let Some(input) = input_ref() else {
-                    return;
-                };
+                let Some(input) = input_ref.get() else {
+                                    return;
+                                };
+
                 let value = input.value();
                 match validator(value) {
                     Some(v) => {
@@ -55,7 +56,7 @@ macro_rules! input_component {
                 }
             });
 
-            let input_class = move || match show_error() && error() {
+            let input_class = move || match show_error.get() && error.get() {
                 false => format!("border rounded-lg px-4 py-2"),
                 _ => format!("border rounded-lg px-4 py-2  border-2 border-solid border-red-500 "),
             };
@@ -72,7 +73,8 @@ macro_rules! input_component {
                         type=input_type.unwrap_or_else(|| "text".into() )
                     />
                     <span class="text-red-500 font-semibold">
-                        <Show when=move || show_error() && error()>
+                        <Show when=move || show_error.get() && error.get()>
+
                                 {format!("Invalid {}",heading.clone())}
                         </Show>
                     </span>
