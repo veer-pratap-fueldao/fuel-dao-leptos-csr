@@ -4,11 +4,11 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
-axum = { version = "0.7", optional = true, features = ["macros"] }
+# axum = { version = "0.7", optional = true, features = ["macros"] }
 console_error_panic_hook = "0.1"
 leptos = { version = "0.6.15", default-features = false, features = ["csr"] }
 
-leptos_axum = { version = "0.6" }
+# leptos_axum = { version = "0.6" }
 leptos_meta = { version = "0.6", features = ["nightly"] }
 leptos_router = { version = "0.6", features = ["nightly"] }
 # tokio = { version = "1", optional = true, features = [
@@ -16,8 +16,8 @@ leptos_router = { version = "0.6", features = ["nightly"] }
 #     "signal",
 #     "time",
 # ] }
-tower = { version = "0.4", optional = true, features = ["full"] }
-tower-http = { version = "0.5", features = ["fs"], optional = true }
+# tower = { version = "0.4", optional = true, features = ["full"] }
+# tower-http = { version = "0.5", features = ["fs"], optional = true }
 wasm-bindgen = "=0.2.93"
 thiserror = "1"
 tracing = { version = "0.1", optional = true }
@@ -46,31 +46,31 @@ k256 = { version = "0.13.4", default-features = false, features = [
 web-time.workspace = true
 uts2ts = "0.4.1"
 dotenv = { version = "0.15.0", optional = true }
-axum-extra = { version = "0.9.3", optional = true, features = [
-    "cookie",
-    "cookie-signed",
-    "cookie-private",
-] }
+# axum-extra = { version = "0.9.3", optional = true, features = [
+#     "cookie",
+#     "cookie-signed",
+#     "cookie-private",
+# ] }
 rand_chacha = { version = "0.3.1"}
 serde_json = "1.0.110"
 enum_dispatch = { version = "0.3.12", optional = true }
-redis = { version = "0.25.2", features = [
-    "tokio-rustls-comp",
-    "aio",
-    "ahash",
-    "connection-manager",
-    "keep-alive",
-], default-features = false, optional = true }
-redb = { version = "2.0.0", optional = true }
+# redis = { version = "0.25.2", features = [
+    # "tokio-rustls-comp",
+    # "aio",
+    # "ahash",
+    # "connection-manager",
+    # "keep-alive",
+# ], default-features = false, optional = true }
+# redb = { version = "2.0.0"}
 gloo = { version = "0.11.0", features = ["futures", "net", "net"] }
-bb8 = { version = "0.8.3", optional = true }
-bb8-redis = { version = "0.15.0", optional = true }
+# bb8 = { version = "0.8.3" }
+# bb8-redis = { version = "0.15.0", optional = true }
 log = "0.4.22"
 simple_logger = "5.0.0"
 hex = "0.4.3"
 convert_case = "0.6.0"
 chrono = "0.4.38"
-
+console_log = "1"
 
 [build-dependencies]
 anyhow = "1.0.86"

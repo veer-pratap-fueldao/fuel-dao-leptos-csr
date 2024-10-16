@@ -1,4 +1,3 @@
-
 use chrono::DateTime;
 use uts2ts::uts2ts;
 use web_time::{Duration, SystemTime};
@@ -15,8 +14,6 @@ pub fn current_epoch() -> Duration {
 pub fn get_day_month_time(epoch_secs: u64) -> String {
     let ts = uts2ts(epoch_secs as i64);
     let year = ts.year;
-
-   
 
     let month = match ts.month {
         1 => "JAN",
@@ -35,8 +32,8 @@ pub fn get_day_month_time(epoch_secs: u64) -> String {
     };
     let f = format!("{month} {:02}, {year}  {}:{}", ts.day, ts.hour, ts.second);
 
-    DateTime::from_timestamp(epoch_secs as i64, 0).map_or( f ,|f| format!("{}", f.format("%b %d, %Y %I:%M %p")))
-
+    DateTime::from_timestamp(epoch_secs as i64, 0)
+        .map_or(f, |f| format!("{}", f.format("%b %d, %Y %I:%M %p")))
 }
 
 pub fn to_hh_mm_ss(duration: Duration) -> String {

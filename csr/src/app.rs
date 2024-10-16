@@ -1,48 +1,29 @@
-use crate::components::*;
+use crate::pages::home::Home;
+use crate::pages::not_found::NotFound;
 use leptos::*;
 use leptos_meta::*;
 use leptos_router::*;
-
-// Main application component
+/// An app router which renders the homepage and handles 404's
 #[component]
 pub fn App() -> impl IntoView {
     // Provides context that manages stylesheets, titles, meta tags, etc.
     provide_meta_context();
 
-    // Content for your app's main structure and routes
     view! {
-        <Stylesheet id="leptos" href="/pkg/fuel-dao-leptos-ssr.css" />
-        <Title text="Welcome to Leptos" />
+        <Html lang="en" dir="ltr" attr:data-theme="light" />
 
-        // Defining the router and the routes for the application
+        // sets the document title
+        <Title text="Welcome to Leptos CSR" />
+
+        // injects metadata in the <head> of the page
+        <Meta charset="UTF-8" />
+        <Meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
         <Router>
-            <main>
-                <Routes>
-                    <Route path="" view=BaseRoute>
-                        <Route path="/" view=HomePage />
-                        <Route path="/search" view=SearchResult />
-                        <Route path="/checkout" view=CheckoutPage />
-                    </Route>
-                </Routes>
-            </main>
+            <Routes>
+                <Route path="/" view=Home />
+                <Route path="/*" view=NotFound />
+            </Routes>
         </Router>
-    }
-}
-
-// Home page component
-#[component]
-fn HomePage() -> impl IntoView {
-    view! {
-        <Title text="FuelDao" />
-        <main>
-            <div class="flex flex-col min-h-screen">
-                <Search />
-                <BestPlacedForTrips />
-                <Advantages />
-                <InvestInCar />
-                <GetInTouch />
-                <Footer />
-            </div>
-        </main>
     }
 }

@@ -1,7 +1,4 @@
 use crate::state::checkout_state::CheckoutState;
-use crate::utils::time::{current_epoch, get_day_month_time, to_hh_mm_ss};
-use chrono::{DateTime, NaiveDateTime};
-use leptos::event_target_value;
 use leptos::html::Input;
 use leptos::*;
 use leptos_icons::Icon;
@@ -27,18 +24,15 @@ pub fn Search() -> impl IntoView {
 
     let checkout_state = CheckoutState::get();
 
-
     // let (pickup_date_value, set_pickup_date_value) = create_signal(String::new());
     // let (return_date_value, set_return_date_value) = create_signal(String::new());
 
-    let start_time = move ||  checkout_state.pickup_date_formatted.get();
+    let start_time = move || checkout_state.pickup_date_formatted.get();
     let end_time = move || checkout_state.return_date_formatted.get();
 
-    
     let (pickup_time_value, set_pickup_time_value) = create_signal(String::new());
     let (return_time_value, set_return_time_value) = create_signal(String::new());
 
-    
     // let on_click_search = move || {
     //     let pickup_date = pickup_ref_date.get().unwrap().value();
     //     let pickup_time = pickup_ref_time.get().unwrap().value();
@@ -160,7 +154,7 @@ pub fn Search() -> impl IntoView {
                                     <input
                                         type="text"
                                         placeholder="Add your location"
-                                        value= "Bengaluru"
+                                        value="Bengaluru"
                                         class="w-[213.81px] h-[24px]  pt-4 pr-4 pb-4 pl-0  bg-[#252525] bg-opacity-0 text-white placeholder-white"
                                         list="cities"
                                     />
@@ -170,150 +164,68 @@ pub fn Search() -> impl IntoView {
                                 </div>
                                 // second field
                                 <div class="flex items-center bg-[#1D1D1D9C] bg-opacity-0 w-[281px] h-[52px] p-[0px_11px] gap-[6px] rounded-tl-[9px] rounded-[9px] ">
-                                            <input
-                                                type="datetime-local"
-                                                placeholder="Pickup datetime"
-                                                class="bg-[#252525] pl-2  bg-opacity-0 text-white w-full placeholder-white"
-                                                ref=pickup_ref_time
-                                                on:input=move |ev| {
-                                                    ev.prevent_default();
-                                                    let value = event_target_value(&ev);
-                                                    set_pickup_time_value.set(value.clone());
-                                                    CheckoutState::set_pickup_date_value_formatted(value);
-                                                }
-                                                value=move || start_time.clone()
-                                            />
-                                    // <!-- First part of the input -->
-                                    /* <div class="flex flex-row justify-between items-center w-[241.67px] gap-[2px] lg:h-[52.5px]">
-                                        // <!-- First sub-field -->
-                                        // <DateInputWithIcon
-                                        // placeholder="Pickup Date"
-                                        // icon=BsCalendar3
-                                        // />
-                                        //
-                                        <div class="flex items-center w-[178.34px] lg:h-[22.34px] bg-[#252525] text-white placeholder-white lg:p-4 bg-opacity-0">
-                                            <button type="datetime-local" class="pt-4 pb-4 pl-2 lg:pl-0">
-                                                // on:click=move |ev: MouseEvent| {
-                                                // ev.prevent_default();
-                                                // if let Some(input) = input_ref.get() {
-                                                // input.click();
-                                                // }
-                                                // }
+                                    <input
+                                        type="datetime-local"
+                                        placeholder="Pickup datetime"
+                                        class="bg-[#252525] pl-2  bg-opacity-0 text-white w-full placeholder-white"
+                                        ref=pickup_ref_time
+                                        on:input=move |ev| {
+                                            ev.prevent_default();
+                                            let value = event_target_value(&ev);
+                                            set_pickup_time_value.set(value.clone());
+                                            CheckoutState::set_pickup_date_value_formatted(value);
+                                        }
+                                        value=move || start_time.clone()
+                                    />
+                                // <!-- First part of the input -->
 
-                                                <Icon
+                                // <!-- First sub-field -->
+                                // <DateInputWithIcon
+                                // placeholder="Pickup Date"
+                                // icon=BsCalendar3
+                                // />
+                                //
 
-                                                    class="w-[22px] h-[22px]"
-                                                    icon=icondata::BsCalendar3
-                                                />
+                                // on:click=move |ev: MouseEvent| {
+                                // ev.prevent_default();
+                                // if let Some(input) = input_ref.get() {
+                                // input.click();
+                                // }
+                                // }
 
-                                            </button>
+                                // <!-- Separator -->
 
-                                            <input
-                                                type="date"
-                                                placeholder="Pickup Date"
-                                                class="bg-[#252525] pl-2 bg-opacity-0 text-white w-full placeholder-white"
-                                                ref=pickup_ref_date
-                                                on:input=move |ev| {
-                                                    ev.prevent_default();
-                                                    let value = event_target_value(&ev);
-                                                    set_pickup_date_value.set(value);
-                                                }
-                                                value=pickup_date_value.get()
-                                            />
-
-                                        </div>
-
-                                        // <!-- Separator -->
-                                        <div class="border-white opacity-0 rotate-90 w-[2.5px] h-[0px] border-t-[1.5px]"></div>
-
-                                        // <!-- Second sub-field -->
-                                        <div class="flex items-center w-[90.34px] lg:h-[22.34px] bg-[#252525] text-white placeholder-white pt-4 pb-4 pl-0  bg-opacity-0">
-                                            <button class="pt-4 pb-4">
-                                                <Icon class="w-[24px] h-[24px]" icon=icondata::WiTime10 />
-                                            </button>
-                                            <input
-                                                type="datetime-local"
-                                                placeholder="Time"
-                                                class="bg-[#252525] pl-2  bg-opacity-0 text-white w-full placeholder-white"
-                                                ref=pickup_ref_time
-                                                on:input=move |ev| {
-                                                    ev.prevent_default();
-                                                    let value = event_target_value(&ev);
-                                                    set_pickup_time_value.set(value);
-                                                }
-                                                value=pickup_time_value.get()
-                                            />
-                                        </div>
-                                    </div> */
+                                // <!-- Second sub-field -->
                                 </div>
                                 // third field
                                 <div class="flex items-center bg-[#1D1D1D9C] bg-opacity-0 w-[281px] h-[52px] p-[0px_11px] gap-[2px] rounded-[9px]">
-                                            <input
-                                                type="datetime-local"
-                                                placeholder="Time"
-                                                class="bg-[#252525] pl-2  bg-opacity-0 text-white w-full placeholder-white"
-                                                ref=return_ref_time
+                                    <input
+                                        type="datetime-local"
+                                        placeholder="Time"
+                                        class="bg-[#252525] pl-2  bg-opacity-0 text-white w-full placeholder-white"
+                                        ref=return_ref_time
 
-                                                on:input=move |ev| {
-                                                    ev.prevent_default();
-                                                    let value = event_target_value(&ev);
-                                                    set_return_time_value.set(value.clone());
-                                                    CheckoutState::set_return_date_value_formatted(value);
-                                                }
-                                                value=end_time.clone()
-                                            />
-                                    // <!-- Placeholder container -->
-                                    /* <div class="flex justify-between items-center w-[240.67px] h-[52.5px] gap-[2px]">
-                                        // <!-- First part of the placeholder -->
-                                        <div class="flex items-center w-[178.34px] h-[22.34px] bg-[#252525] text-white  bg-opacity-0">
-                                            <button class="pt-4 pb-4">
-                                                <Icon
-                                                    class="w-[22px] h-[22px]"
-                                                    icon=icondata::BsCalendar3
-                                                />
-                                            </button>
-                                            <input
-                                                type="date"
-                                                placeholder="Return Date"
-                                                class="bg-[#252525] pl-4  bg-opacity-0 text-white w-full placeholder-white"
-                                                ref=return_ref_date
-                                                on:input=move |ev| {
-                                                    ev.prevent_default();
-                                                    let value = event_target_value(&ev);
-                                                    set_return_date_value.set(value);
-                                                }
-                                                value=return_date_value.get()
-                                            />
+                                        on:input=move |ev| {
+                                            ev.prevent_default();
+                                            let value = event_target_value(&ev);
+                                            set_return_time_value.set(value.clone());
+                                            CheckoutState::set_return_date_value_formatted(value);
+                                        }
+                                        value=end_time.clone()
+                                    />
+                                // <!-- Placeholder container -->
 
-                                        </div>
+                                // <!-- First part of the placeholder -->
 
-                                        // <!-- Separator -->
-                                        <div class="border-white opacity-0 rotate-90 w-[2.5px] h-[0px] border-t-[1.5px]"></div>
+                                // <!-- Separator -->
 
-                                        // <!-- Second part of the placeholder -->
-                                        <div class="flex items-center w-[98.34px] h-[22.34px] bg-[#252525] text-white  bg-opacity-0">
-                                            <button class="pt-4 pb-4">
-                                                <Icon class="w-[24px] h-[24px]" icon=icondata::WiTime10 />
-                                            </button>
-                                            <input
-                                                type="time"
-                                                placeholder="Time"
-                                                class="bg-[#252525] pl-2  bg-opacity-0 text-white w-full placeholder-white"
-                                                ref=return_ref_time
-
-                                                on:input=move |ev| {
-                                                    ev.prevent_default();
-                                                    let value = event_target_value(&ev);
-                                                    set_return_time_value.set(value);
-                                                }
-                                                value=return_time_value.get()
-                                            />
-                                            </div>
-                                        
-                                        </div> */
+                                // <!-- Second part of the placeholder -->
                                 </div>
                             </div>
-                            <a href="/search" class="flex justify-center items-center py-3 px-8 mt-8 w-full font-semibold text-white bg-green-600 rounded-md lg:mt-0 lg:w-auto hover:bg-green-700">
+                            <a
+                                href="/search"
+                                class="flex justify-center items-center py-3 px-8 mt-8 w-full font-semibold text-white bg-green-600 rounded-md lg:mt-0 lg:w-auto hover:bg-green-700"
+                            >
                                 Search
                             </a>
                         // <button class="flex justify-center items-center bg-green-600 hover:bg-green-700 w-[141.75px] h-[52.5px] p-[19px_39px] gap-[10px] rounded-[9px]">
@@ -336,3 +248,4 @@ pub fn Search() -> impl IntoView {
         </section>
     }
 }
+
